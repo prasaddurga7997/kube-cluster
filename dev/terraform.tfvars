@@ -1,0 +1,8 @@
+clustersg = "kubesgfordev"
+vpcname = "kubevpc"
+pubsub01 = "pubsub1"
+pubsub02 = "pubsub2"
+block1 = "192.168.0.0/16"
+block2 = "192.168.0.0/18"
+block3 = "192.168.64.0/18"
+block4 = "0.0.0.0/0"
