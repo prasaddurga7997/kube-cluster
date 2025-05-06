@@ -5,35 +5,35 @@ metadata:
   namespace: devproject
 spec:
   containers:
-  - name: webcon
-    image: prasad193/webnew:v1
-    imagePullPolicy: Always
-    ports:
-    - containerPort: 80
-      name: apache
-      protocol: TCP
-    resources:
-      requests:
-        memory: "20Mi"
-        cpu: "20m"
-      limits:
-        memory: "30Mi"
-        cpu: "30m"
-    env:
-    - name: classname
-      valueFrom:
-        configMapKeyRef:
-          name: test-config
-          key: class.name
-    - name: classday
-      valueFrom:
-        configMapKeyRef:
-          name: test-config
-          key: class.day
-    volumeMounts:
-    - name: test
-      mountPath: "/tmp"
-    volumes:
+    - name: webcon
+      image: prasad193/webnew:v1
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 80
+          name: apache
+          protocol: TCP
+      resources:
+        requests:
+          memory: "200Mi"
+          cpu: "200m"
+        limits:
+          memory: "300Mi"
+          cpu: "400m"
+      env:
+        - name: classname
+          valueFrom:
+            configMapKeyRef:
+              name: test-config
+              key: class.name
+        - name: classday
+          valueFrom:
+            configMapKeyRef:
+              name: test-config
+              key: class.day
+      volumeMounts:
+        - name: test
+          mountPath: "/tmp"
+  volumes:
     - name: test
       configMap:
         name: game-config-2

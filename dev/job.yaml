@@ -2,7 +2,9 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: hello-world
+  namespace: devproject
 spec:
+  ttlSecondsAfterFinished: 40
   template:
     spec:
       containers:
